@@ -17,13 +17,14 @@ blockquote {
 .well {
   position: relative;
   z-index: 0;
-  height: 300px;
-  min-width: 600px;
+  height: 250px;
 }
 
-// TODO: Set up tweet button, transition
+// TODO: transition
 //  between quotes when generate is clicked, 
 // fix button difference to well when made xs
+// fix scss so that you use it properly
+// twitter button hover weirdness
 
 
 
@@ -123,17 +124,28 @@ body {
 button {
   color: $whitish !important;
   background: rgba(0,0,0,0);
-  border: solid 5px $whitish !important;
-  font-size: 1.5em !important;
+  border: solid 2px $whitish !important;
+  font-size: 1.2em !important;
+  -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 button:hover,
 button.hover {
   border-color: #e7e7e7 !important;
-  background-color: white;
+  background-color: #e7e7e7 !important;
+}
+
+#gen-button.hover,
+#gen-button:hover {
   color: $bg-green !important;
+
 }
 button:active,
 button.active {
+  background-color: $whitish !important;
   border-color: $whitish !important;
   color: $bg-green !important;
 }
@@ -186,6 +198,7 @@ float: left;
 
 .fa-quote-right {
 float: right;
+padding-top: 30px;
 }
 
 blockquote footer {
@@ -195,8 +208,43 @@ blockquote footer {
   z-index: 10;
 }
 
+$twitter-blue: #55ACEE;
 #tweet-link {
-  width: 400px;
-  height: 100px;
-  background-color: black;
+  // border: none !important;
+  background-color: $twitter-blue;
+  color: white !important;
+  a {
+    color: white !important;
+  }
+}
+
+#tweet-link:hover {
+    background-color: white !important;
+    color: $twitter-blue !important;
+}
+
+#tweet-link:hover a {
+    color: $twitter-blue !important;
+    text-decoration: none;
+}
+
+#tweet-link:active {
+    color: $twitter-blue !important;
+    text-decoration: none;
+    background-color: white !important;
+}
+
+.twitter-share-button:hover button,
+.twitter-share-button:active button {
+    color: $twitter-blue !important;
+    text-decoration: none;
+    background-color: white !important;
+}
+
+.btn {
+  border-radius: 0 !important;
+}
+
+.container {
+  min-width: 650px;
 }
