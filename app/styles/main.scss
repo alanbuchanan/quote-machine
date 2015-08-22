@@ -20,13 +20,9 @@ blockquote {
   height: 250px;
 }
 
-// TODO: transition
-//  between quotes when generate is clicked, 
-// fix button difference to well when made xs
+// TODO:  
 // fix scss so that you use it properly
-// twitter button hover weirdness
-
-
+// mobile fix
 
 .browsehappy {
   margin: 0.2em 0;
@@ -41,7 +37,6 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: $bg-green;
-  min-width: 500px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -245,6 +240,37 @@ $twitter-blue: #55ACEE;
   border-radius: 0 !important;
 }
 
-.container {
-  min-width: 650px;
+div {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 570px) {
+  .speech i {
+    font-size: 5em;
+  }
+
+  .container #phrase {
+    font-size: 1em;
+  }
+  
+  blockquote {
+    width: 100%;
+
+    .container {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
+    }
+  }
+
+}
+
+@media screen and (max-height: 400px) {
+  .well {
+    height: 175px;
+  }
+
 }
