@@ -44,11 +44,9 @@ $(document).ready(function(){
 
         var urlString = '\'' + $('#phrase').html() + '\' - ' + $('#author').html();
         
-        var finalString = "<a class=\"twitter-share-button\"
-  href=\"https://twitter.com/intent/tweet?text=\" " + urlString + 
-  "data-size=\"large\">Tweet</a>";
+        var finalString = "<a class=\"twitter-share-button\"href=\"https://twitter.com/intent/tweet?text=\" " + urlString + "data-size=\"large\">Tweet</a>";
 
-        $('#tweet-link').text('testing');
+        $('#tweet-link').text(finalString);
         console.log(finalString);
     }
     
