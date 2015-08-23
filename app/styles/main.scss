@@ -9,6 +9,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 $whitish: #F5F5F5;
 $bg-green: #347D7B;
+$twitter-blue: #55ACEE;
 
 blockquote {
     border-left: none;
@@ -21,8 +22,8 @@ blockquote {
 }
 
 // TODO:  
-// fix scss so that you use it properly
-// mobile fix
+// twitter link comes up twice, second is after a delay
+// black box in top right hand corner on desktop
 
 .browsehappy {
   margin: 0.2em 0;
@@ -114,9 +115,7 @@ body {
   }
 }
 
-
-
-button {
+#gen-button {
   color: $whitish !important;
   background: rgba(0,0,0,0);
   border: solid 2px $whitish !important;
@@ -126,22 +125,62 @@ button {
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &.hover {
+    border-color: #e7e7e7 !important;
+    background-color: #e7e7e7 !important;
+  }
+
+  &:active,
+  &.active {
+    background-color: $whitish !important;
+    border-color: $whitish !important;
+    color: $bg-green !important;
+  }
 }
-button:hover,
-button.hover {
-  border-color: #e7e7e7 !important;
-  background-color: #e7e7e7 !important;
+
+#gen-button {
+  color: $whitish !important;
+  background: rgba(0,0,0,0);
+  border: solid 2px $whitish !important;
+  font-size: 1.2em !important;
+  -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+  &:hover, &.hover, &:active, &.active {
+    border-color: #e7e7e7 !important;
+    background-color: #e7e7e7 !important;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+
+#twitter-share-button {
+  color: $whitish !important;
+  background-color: $twitter-blue;
+  border: solid 2px $whitish !important;
+  font-size: 1.2em !important;
+  -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+  &:hover, &.hover, &:active, &.active {
+    border-color: #e7e7e7 !important;
+    background-color: #e7e7e7 !important;
+    color: $twitter-blue !important;
+  }
 }
 
 #gen-button.hover,
 #gen-button:hover {
-  color: $bg-green !important;
-
-}
-button:active,
-button.active {
-  background-color: $whitish !important;
-  border-color: $whitish !important;
   color: $bg-green !important;
 }
 
@@ -149,91 +188,56 @@ button.active {
    outline: none !important;
 }
 
-.well .btn {
-  
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 10;
+.well blockquote {
+  p {
+    vertical-align: top;
+    text-align: center;
+    position: relative;
+    font-family: 'Coming Soon', cursive;
+    font-size: 1.5em;
+    z-index: 10;
+  }
+  .container {
+    max-width: 80%;
+    max-height: 80%;
+  }
 
+  footer {
+    position: relative;
+    font-family: 'Cinzel', serif;
+    float:right;
+    z-index: 10;
+  }
+  .btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+  }
 }
 
-.well blockquote p {
-  vertical-align: top;
-  text-align: center;
-  position: relative;
-  font-family: 'Coming Soon', cursive;
-  font-size: 1.5em;
-  z-index: 10;
-}
-
-blockquote .container {
-  max-width: 80%;
-  max-height: 80%;
-}
 
 .speech {
   position: absolute;
   font-family: times;
   z-index: 0;
-}
-
-.speech i {
-  height: 30%;
-  width: 30%;
-  color: #e7e7e7;
-  font-size: 10em;
-  position: inline-block;
-}
-
-.fa-quote-left {
-float: left;
-}
-
-.fa-quote-right {
-float: right;
-padding-top: 30px;
-}
-
-blockquote footer {
-  position: relative;
-  font-family: 'Cinzel', serif;
-  float:right;
-  z-index: 10;
-}
-
-$twitter-blue: #55ACEE;
-#tweet-link {
-  // border: none !important;
-  background-color: $twitter-blue;
-  color: white !important;
-  a {
-    color: white !important;
+  i {
+    height: 30%;
+    width: 30%;
+    color: #e7e7e7;
+    font-size: 10em;
+    position: inline-block;
   }
 }
 
-#tweet-link:hover {
-    background-color: white !important;
-    color: $twitter-blue !important;
+.fa-quote-left {
+  float: left;
 }
 
-#tweet-link:hover a {
-    color: $twitter-blue !important;
-    text-decoration: none;
-}
-
-#tweet-link:active {
-    color: $twitter-blue !important;
-    text-decoration: none;
-    background-color: white !important;
-}
-
-.twitter-share-button:hover button,
-.twitter-share-button:active button {
-    color: $twitter-blue !important;
-    text-decoration: none;
-    background-color: white !important;
+.fa-quote-right {
+  float: right;
+  padding-top: 30px;
 }
 
 .btn {
@@ -246,7 +250,7 @@ div {
   margin-right: auto !important;
 }
 
-
+//phone 
 @media screen and (min-width: 200px) and (max-width: 570px) {
   .speech i {
     font-size: 5em;
@@ -266,8 +270,13 @@ div {
     }
   }
 
+  .well {
+    height: 300px;
+  }
+
 }
 
+//wide phone
 @media screen and (max-height: 400px) {
   .well {
     height: 175px;

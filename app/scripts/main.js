@@ -10,9 +10,9 @@ $(document).ready(function(){
 
         {phrase: 'Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.', author: 'Martin Golding'},
 
-        {phrase: 'C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.', author: 'Bjarne Stroustrup'},
+        {phrase: 'C makes it easy to shoot yourself in the foot - C++ makes it harder, but when you do, it blows away your whole leg.', author: 'Bjarne Stroustrup'},
 
-        {phrase: 'When debugging, novices insert corrective code; experts remove defective code.', author: 'Richard Pattis'},
+        {phrase: 'When debugging, novices insert corrective code - experts remove defective code.', author: 'Richard Pattis'},
 
         {phrase: 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.', author: 'Martin Fowler'},
 
@@ -38,9 +38,10 @@ $(document).ready(function(){
             $('#author').text(quotes[randomNum].author).fadeIn('fast');
 
             var urlString = '\'' + $('#phrase').html() + '\' - ' + $('#author').html();
-            var finalUrl = "<a class=\"twitter-share-button\" href=\"https://twitter.com/intent/tweet?text=" + urlString + "\" target=\"_blank\" data-size=\"large\"><button class=\"btn btn-block\"><i class=\"fa fa-twitter\"></i> Tweet this quote</button></a>";
+            var finalUrl = "<a href=\"https://twitter.com/intent/tweet?text=" + urlString + "\" target=\"_blank\" data-size=\"large\"><button class=\"btn btn-block\" id=\"twitter-share-button\"><i class=\"fa fa-twitter\"></i> Tweet this quote</button></a>";
             $(finalUrl).appendTo('#tweet-link');
             console.log(urlString);
+
         }, 400);
 
 
