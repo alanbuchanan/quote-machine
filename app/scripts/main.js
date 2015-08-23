@@ -26,8 +26,6 @@ $(document).ready(function(){
     var urlString;
 
     function phraseLinkAppender() {
-        // Re-initiate twitter button
-        $('#tweet-link').text('');
 
         var randomNum = Math.floor(Math.random() * 10 );
         console.log(randomNum);
@@ -38,8 +36,9 @@ $(document).ready(function(){
             $('#author').text(quotes[randomNum].author).fadeIn('fast');
 
             var urlString = '\'' + $('#phrase').html() + '\' - ' + $('#author').html();
-            var finalUrl = "<a href=\"https://twitter.com/intent/tweet?text=" + urlString + "\" target=\"_blank\" data-size=\"large\"><button class=\"btn btn-block\" id=\"twitter-share-button\"><i class=\"fa fa-twitter\"></i> Tweet this quote</button></a>";
-            $(finalUrl).appendTo('#tweet-link');
+
+            $('a').attr('href', 'https://twitter.com/intent/tweet?text=' + urlString);
+
             console.log(urlString);
 
         }, 400);

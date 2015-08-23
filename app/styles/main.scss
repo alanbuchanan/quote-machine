@@ -22,7 +22,6 @@ blockquote {
 }
 
 // TODO:  
-// twitter link comes up twice, second is after a delay
 // black box in top right hand corner on desktop
 
 .browsehappy {
@@ -251,7 +250,7 @@ div {
 }
 
 //phone 
-@media screen and (min-width: 200px) and (max-width: 570px) {
+@media screen and (min-width: 200px) and (max-width: 610px) {
   .speech i {
     font-size: 5em;
   }
